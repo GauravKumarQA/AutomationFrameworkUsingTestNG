@@ -1,15 +1,25 @@
-package basePackage;
+/*
+ * @Author-Gaurav Kumar
+ * Automation frame work Base Browser handling class.
+ * Configured for Chrome, Firefox, IE, and PhantomJS.
+ *Remote webDriver is also present.
+ * 
+ * */
 
+
+package basePackage;
 import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
-
-import utils.runFile;
 
 public class GetBrowserInstance {
 	
@@ -69,10 +79,33 @@ public class GetBrowserInstance {
 		
 	}
 	@Test
-	public void gridBrowser(){	
-		runFile runf = new runFile();
-		runf.OpenFile("grid.bat", System.getProperty("user.dir")+"\\drivers\\grid");
+	public void gridBrowser() throws IOException, InterruptedException{	
 		
+		
+		
+		Runtime rt = Runtime.getRuntime();
+		//rt.exec(new String[]{"cmd.exe","/c","start"});
+		
+		rt.exec("cmd.exe /c cd  \""+"D:\\TESTING\\TPworkSpace\\SampleProject\\drivers\\grid\\"+"\" & start cmd.exe /k \"java -jar selenium-server-standalone-3.6.0.jar -role hub -port 4445");
+		
+		Thread.sleep(10000);
+		
+		//rt.exec("cmd.exe /c cd  \""+"D:\\TESTING\\TPworkSpace\\SampleProject\\drivers\\grid\\"+"\" & start cmd.exe /k \"java -jar selenium-server-standalone-3.6.0.jar -role webdriver -hub http://192.168.1.7:4445/grid/register -port 4446");
+		
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\drivers\\chrome\\chromedriver.exe");
+		DesiredCapabilities cap = DesiredCapabilities.chrome();
+		cap.setBrowserName("chrome");
+		cap.setPlatform(org.openqa.selenium.Platform.WINDOWS);
+		
+		try {
+			WebDriver browser = new RemoteWebDriver(new URL("http://192.168.1.7:4445/wd/hub"),cap);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+ 		
+	
+ 		
 	}
 	
 }
