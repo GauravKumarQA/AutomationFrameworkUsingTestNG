@@ -14,22 +14,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import basePackage.GetBrowserInstance;
 
+
+
 public class Keywords extends GetBrowserInstance{
 	
 	WebDriver driver ;
-	
-//===Open browser with BrowserName=============================================
+
+//===Open browser with BrowserName=============================================>
 	
 	public void openBrowser(String BrowserName){
 	GetBrowserInstance browser = new GetBrowserInstance();
 	this.driver = browser.openLocalBowser(BrowserName);		
 	}
 	
-//=============================================================================	
+//=============================================================================>	
 	
 	ScreenShot src = new ScreenShot();
 	
-	public void getUrl(String URL){//====open url =====
+	public void getUrl(String URL){//====open url =====>
 		driver.get(URL);
 	}
 	
@@ -54,12 +56,12 @@ public class Keywords extends GetBrowserInstance{
 		return	driver.findElement(locator);
 	}
 	
-	public String getText(WebDriver driver, By locator){//==Return String as data.
+	public String getText(WebDriver driver, By locator){//==Return String as data==>
 		waitElementUntilDisplayed(locator);
 		return	driver.findElement(locator).getText();	
 		}
 	
-	public int findElementsCount(WebDriver driver, By locator) {//==Find elements counts and returns Integer value
+	public int findElementsCount(WebDriver driver, By locator) {//==Find elements counts and returns Integer value==>
 		List<WebElement> listOfElement = driver.findElements(locator);
 		return listOfElement.size();
 	}
@@ -74,11 +76,18 @@ public class Keywords extends GetBrowserInstance{
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 	
-	
+	//=========================ScreenShots===========================================>
 	public void captureScreenShot() throws IOException{//==Capture screenShots===>
 		src.captureScreenshot(driver);
 	}
-	
+	public void captureScreenShotWithUrl() {//==Capture screenShots with url on screenshot===>
+		
+	try{src.addurlToScreenShot(driver,driver.getCurrentUrl());}catch(Throwable e){e.printStackTrace();}
+	}
+	public void captureScreenShotReTurnPath() throws IOException{//==Capture screenShots===>
+		src.captureScreenshotReturnPath(driver);
+	}
+	//=============================================================================>
 	
 	//================Switch to Frames via String/Integer/default======>
 	

@@ -25,7 +25,7 @@ public class ReadwriteExcel {
 	public Row row;
 	public Row rowForColumn;
 	public String FinalDataOfcoulum = "";
-	public int FinalntDataOfcoulum ;
+	public double FinalIntDataOfcoulum ;
 	
 
 	/* ReadWrite_Xls(String path) Constructor specification :-
@@ -160,7 +160,7 @@ public class ReadwriteExcel {
 		return  FinalDataOfcoulum ;
 	}	
 
-	public String getIntCellDataByColumnName( String sheetName, int rowNum, String colName)
+	public double getIntCellDataByColumnName( String sheetName, int rowNum, String colName)
 	{
 		Sheet objSheet = workbook.getSheet(sheetName);
 		row = objSheet.getRow(rowNum);
@@ -178,7 +178,7 @@ public class ReadwriteExcel {
 			}
 		}
 		
-		return  FinalDataOfcoulum ;
+		return  FinalIntDataOfcoulum ;
 	}	
 	
 	
@@ -285,6 +285,46 @@ public void setCellData(String sheetName, int colNum, int rowNum, String inputVa
 		Row row = objSheet.createRow(rowNum);
 		Cell newCell = row.createCell(colNum);
 		newCell.setCellValue(inputValue);
+	
+	try 
+	{
+		outputStream = new FileOutputStream(path);
+		workbook.write(outputStream);			
+		outputStream.close();
+	} 
+	catch (IOException e) 
+	{
+		e.printStackTrace();
+	}
+}
+
+public void setTwoCellData(String sheetName, int colNum1, int colNum2, int rowNum, String inputValue1,String inputValue2) 
+{
+		Sheet objSheet = workbook.getSheet(sheetName);
+		Row row = objSheet.createRow(rowNum);
+		Cell newCell1 = row.createCell(colNum1);
+		Cell newCell2 = row.createCell(colNum2);
+		newCell1.setCellValue(inputValue1);
+		newCell2.setCellValue(inputValue2);
+	
+	try 
+	{
+		outputStream = new FileOutputStream(path);
+		workbook.write(outputStream);			
+		outputStream.close();
+	} 
+	catch (IOException e) 
+	{
+		e.printStackTrace();
+	}
+}
+
+public void setCellFormula(String sheetName, int colNum, int rowNum, String formulaInput) 
+{
+		Sheet objSheet = workbook.getSheet(sheetName);
+		Row row = objSheet.createRow(rowNum);
+		Cell newCell = row.createCell(colNum);
+		newCell.setCellFormula(formulaInput);
 	
 	try 
 	{

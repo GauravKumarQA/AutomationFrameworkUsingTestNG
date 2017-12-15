@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="basePackage.GetBrowserInstance">
+      <class name="pageObjects.excel">
         <methods>
-          <include name="gridBrowser"/>
+          <include name="test"/>
         </methods>
-      </class> <!-- basePackage.GetBrowserInstance -->
+      </class> <!-- pageObjects.excel -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

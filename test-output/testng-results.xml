@@ -1,93 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="32822" started-at="2017-11-13T09:17:37Z" finished-at="2017-11-13T09:18:09Z">
+  <suite name="Default suite" duration-ms="8399" started-at="2017-12-08T13:55:33Z" finished-at="2017-12-08T13:55:41Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="32822" started-at="2017-11-13T09:17:37Z" finished-at="2017-11-13T09:18:09Z">
-      <class name="basePackage.GetBrowserInstance">
-        <test-method status="FAIL" signature="gridBrowser()[pri:0, instance:basePackage.GetBrowserInstance@13805618]" name="gridBrowser" duration-ms="32769" started-at="2017-11-13T14:47:37Z" finished-at="2017-11-13T14:48:09Z">
-          <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
-            <message>
-              <![CDATA[Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'GAURAVK', ip: '169.254.21.95', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_141'
-Driver info: driver.version: RemoteWebDriver]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: '3.5.3', revision: 'a88d25fe6b', time: '2017-08-29T12:42:44.417Z'
-System info: host: 'GAURAVK', ip: '169.254.21.95', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_141'
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:667)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:255)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:237)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:138)
-	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:175)
-	at basePackage.GetBrowserInstance.gridBrowser(GetBrowserInstance.java:95)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:669)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:877)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1201)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:776)
-	at org.testng.TestRunner.run(TestRunner.java:634)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
-	at org.testng.TestNG.runSuites(TestNG.java:1161)
-	at org.testng.TestNG.run(TestNG.java:1129)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 192.168.1.7:4445 [/192.168.1.7] failed: Connection timed out: connect
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:159)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:359)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:381)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:111)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.fallBackExecute(ApacheHttpClient.java:139)
-	at org.openqa.selenium.remote.internal.ApacheHttpClient.execute(ApacheHttpClient.java:87)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:337)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:136)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:646)
-	... 30 more
-Caused by: java.net.ConnectException: Connection timed out: connect
-	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
-	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
-	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
-	at java.net.PlainSocketImpl.connect(Unknown Source)
-	at java.net.SocksSocketImpl.connect(Unknown Source)
-	at java.net.Socket.connect(Unknown Source)
-	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
-	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
-	... 45 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.remote.UnreachableBrowserException -->
+    <test name="Default test" duration-ms="8399" started-at="2017-12-08T13:55:33Z" finished-at="2017-12-08T13:55:41Z">
+      <class name="pageObjects.test2">
+        <test-method status="PASS" signature="test()[pri:0, instance:pageObjects.test2@5025a98f]" name="test" duration-ms="8368" started-at="2017-12-08T19:25:33Z" finished-at="2017-12-08T19:25:41Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- gridBrowser -->
-      </class> <!-- basePackage.GetBrowserInstance -->
+        </test-method> <!-- test -->
+      </class> <!-- pageObjects.test2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
