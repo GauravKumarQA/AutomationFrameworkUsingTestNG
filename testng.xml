@@ -4,8 +4,6 @@
   <test name="Test">
     <classes>
       <class name="pageObjects.test2"/>
-      <class name="pageObjects.test3"/>
-      <class name="pageObjects.test4"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

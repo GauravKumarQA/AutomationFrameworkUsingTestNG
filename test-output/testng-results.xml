@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8399" started-at="2017-12-08T13:55:33Z" finished-at="2017-12-08T13:55:41Z">
+  <suite name="Default suite" duration-ms="2512" started-at="2018-02-13T11:39:53Z" finished-at="2018-02-13T11:39:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8399" started-at="2017-12-08T13:55:33Z" finished-at="2017-12-08T13:55:41Z">
-      <class name="pageObjects.test2">
-        <test-method status="PASS" signature="test()[pri:0, instance:pageObjects.test2@5025a98f]" name="test" duration-ms="8368" started-at="2017-12-08T19:25:33Z" finished-at="2017-12-08T19:25:41Z">
+    <test name="Default test" duration-ms="2512" started-at="2018-02-13T11:39:53Z" finished-at="2018-02-13T11:39:56Z">
+      <class name="pageObjects.excel">
+        <test-method status="PASS" signature="test()[pri:0, instance:pageObjects.excel@5702b3b1]" name="test" duration-ms="2473" started-at="2018-02-13T17:09:53Z" finished-at="2018-02-13T17:09:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-      </class> <!-- pageObjects.test2 -->
+      </class> <!-- pageObjects.excel -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
