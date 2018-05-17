@@ -1,17 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2512" started-at="2018-02-13T11:39:53Z" finished-at="2018-02-13T11:39:56Z">
+  <suite name="Default suite" duration-ms="66" started-at="2018-05-16T19:49:14Z" finished-at="2018-05-16T19:49:14Z">
     <groups>
+      <group name="green">
+        <method signature="groupAnnotations.testGroupsFour()[pri:0, instance:testCases.groupAnnotations@e45f292]" name="testGroupsFour" class="testCases.groupAnnotations"/>
+        <method signature="groupAnnotations.testGroupsThree()[pri:0, instance:testCases.groupAnnotations@e45f292]" name="testGroupsThree" class="testCases.groupAnnotations"/>
+      </group> <!-- green -->
+      <group name="yellow">
+        <method signature="groupAnnotations.testGroupsOne()[pri:0, instance:testCases.groupAnnotations@e45f292]" name="testGroupsOne" class="testCases.groupAnnotations"/>
+        <method signature="groupAnnotations.testGroupsTwo()[pri:0, instance:testCases.groupAnnotations@e45f292]" name="testGroupsTwo" class="testCases.groupAnnotations"/>
+      </group> <!-- yellow -->
     </groups>
-    <test name="Default test" duration-ms="2512" started-at="2018-02-13T11:39:53Z" finished-at="2018-02-13T11:39:56Z">
-      <class name="pageObjects.excel">
-        <test-method status="PASS" signature="test()[pri:0, instance:pageObjects.excel@5702b3b1]" name="test" duration-ms="2473" started-at="2018-02-13T17:09:53Z" finished-at="2018-02-13T17:09:56Z">
+    <test name="Default test" duration-ms="66" started-at="2018-05-16T19:49:14Z" finished-at="2018-05-16T19:49:14Z">
+      <class name="testCases.groupAnnotations">
+        <test-method status="PASS" signature="beforeGroupTwo()[pri:0, instance:testCases.groupAnnotations@e45f292]" name="beforeGroupTwo" is-config="true" duration-ms="7" started-at="2018-05-17T01:19:14Z" finished-at="2018-05-17T01:19:14Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test -->
-      </class> <!-- pageObjects.excel -->
+        </test-method> <!-- beforeGroupTwo -->
+        <test-method status="PASS" signature="testGroupsFour()[pri:0, instance:testCases.groupAnnotations@e45f292]" name="testGroupsFour" duration-ms="9" started-at="2018-05-17T01:19:14Z" finished-at="2018-05-17T01:19:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGroupsFour -->
+        <test-method status="PASS" signature="beforeGroup()[pri:0, instance:testCases.groupAnnotations@e45f292]" name="beforeGroup" is-config="true" duration-ms="0" started-at="2018-05-17T01:19:14Z" finished-at="2018-05-17T01:19:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeGroup -->
+        <test-method status="PASS" signature="testGroupsOne()[pri:0, instance:testCases.groupAnnotations@e45f292]" name="testGroupsOne" duration-ms="2" started-at="2018-05-17T01:19:14Z" finished-at="2018-05-17T01:19:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGroupsOne -->
+        <test-method status="PASS" signature="testGroupsThree()[pri:0, instance:testCases.groupAnnotations@e45f292]" name="testGroupsThree" duration-ms="2" started-at="2018-05-17T01:19:14Z" finished-at="2018-05-17T01:19:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGroupsThree -->
+        <test-method status="PASS" signature="afterGroupTwo()[pri:0, instance:testCases.groupAnnotations@e45f292]" name="afterGroupTwo" is-config="true" duration-ms="4" started-at="2018-05-17T01:19:14Z" finished-at="2018-05-17T01:19:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterGroupTwo -->
+        <test-method status="PASS" signature="testGroupsTwo()[pri:0, instance:testCases.groupAnnotations@e45f292]" name="testGroupsTwo" duration-ms="4" started-at="2018-05-17T01:19:14Z" finished-at="2018-05-17T01:19:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGroupsTwo -->
+        <test-method status="PASS" signature="afterGroupOne()[pri:0, instance:testCases.groupAnnotations@e45f292]" name="afterGroupOne" is-config="true" duration-ms="0" started-at="2018-05-17T01:19:14Z" finished-at="2018-05-17T01:19:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterGroupOne -->
+      </class> <!-- testCases.groupAnnotations -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

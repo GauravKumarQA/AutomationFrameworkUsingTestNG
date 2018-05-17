@@ -116,11 +116,11 @@
 			<version>2.19.1</version>
 				<configuration>
 				<systemPropertyVariables>
-                    <environment>${browserName}</environment>
+                    <!-- <environment>${browserName}</environment> -->
                 </systemPropertyVariables>
 					<suiteXmlFiles>
 					<!-- TestNG suite XML files -->
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<!-- <suiteXmlFile>testng.xml</suiteXmlFile> -->
 					</suiteXmlFiles>
 					
 					
