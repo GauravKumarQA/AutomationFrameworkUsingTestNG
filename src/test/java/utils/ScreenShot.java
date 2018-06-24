@@ -8,9 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-
 import javax.imageio.ImageIO;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -18,24 +16,24 @@ import org.openqa.selenium.WebDriver;
 
 public class ScreenShot {
 
-	public void captureScreenshot(WebDriver driver) throws IOException{
+	public void captureScreenshot(WebDriver driver, String testStepName) throws IOException{
 		
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); 
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH_mm_ss");
 		String formatedDateAndTime = now.format(format);
-		FileUtils.copyFile(src, new File(System.getProperty("user.dir")+"\\Screenshots\\" + formatedDateAndTime.toString() +" captured.png"));
+		FileUtils.copyFile(src, new File(System.getProperty("user.dir")+"\\Screenshots\\" + formatedDateAndTime.toString() +testStepName+".png"));
 		
 	}
 	
-public String captureScreenshotReturnPath(WebDriver driver) throws IOException{
+public String captureScreenshotReturnPath(WebDriver driver, String testStepName) throws IOException{
 		
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); 
 		LocalDateTime now = LocalDateTime.now();
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH_mm_ss");
 		String formatedDateAndTime = now.format(format);
-		FileUtils.copyFile(src, new File(System.getProperty("user.dir")+"\\Screenshots\\" + formatedDateAndTime.toString() +" captured.png"));
-		return System.getProperty("user.dir")+"\\Screenshots\\" + formatedDateAndTime.toString() +" captured.png";
+		FileUtils.copyFile(src, new File(System.getProperty("user.dir")+"\\Screenshots\\" + formatedDateAndTime.toString() +testStepName+".png"));
+		return System.getProperty("user.dir")+"\\Screenshots\\" + formatedDateAndTime.toString() +testStepName+".png";
 	}
 	
 	//================================================>

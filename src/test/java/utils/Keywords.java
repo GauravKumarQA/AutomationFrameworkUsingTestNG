@@ -30,12 +30,9 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
-import basePackage.GetBrowserInstance;
 
-public class Keywords extends GetBrowserInstance
-{
+public class Keywords {
 
 	WebElement element = null;
 
@@ -48,9 +45,7 @@ public class Keywords extends GetBrowserInstance
 		driver.get(URL);
 	}
 	
-	
-	
-	
+		
 	/*
 	 *This functions use to find a attribute value which is present in DOM.
 	 *It returns a String value
@@ -58,8 +53,6 @@ public class Keywords extends GetBrowserInstance
 	public String getAttributeValue(WebDriver driver, By locator, String attributeKey) {
 		return driver.findElement(locator).getAttribute(attributeKey);
 	}
-	
-	
 	
 	
 	
@@ -138,9 +131,9 @@ public class Keywords extends GetBrowserInstance
 	 *This function will wait for element to be displayed
 	 *Parameter which we need to pass is web driver and a locator type By.
 	 */
-	public void findElementSendKey(WebDriver driver ,By locator , String SendkeyData){//==Find element and send keys====>
+	public void findElementSendKey(WebDriver driver ,By locator , String sendkeyData){//==Find element and send keys====>
 		waitElementUntilDisplayed(driver, locator);
-		driver.findElement(locator).sendKeys(SendkeyData);
+		driver.findElement(locator).sendKeys(sendkeyData);
 	}
 	
 	
@@ -169,7 +162,7 @@ public class Keywords extends GetBrowserInstance
 	
 	/*
 	 *This functions use to find an element in DOM.
-	 *If element is present in DOM it will retur true
+	 *If element is present in DOM it will return true
 	 *otherwise return false
 	 */
 	public  boolean isElementPresent(WebDriver driver ,By locator){
@@ -331,18 +324,6 @@ public class Keywords extends GetBrowserInstance
 	}
 
 
-
-	public  boolean isElementsPresent(WebDriver driver ,By locator,int count){//===Find elements and return True/False=====>
-		try {
-			waitElementsUntilDisplayed(driver, locator,count);
-			return true;
-		}catch(Exception e) {
-			//System.out.println(locator + " Not found");
-			return false;
-		}
-	}
-
-
 	public void uploadFileByRobotAfterClickBrowseButton(WebDriver driver, String filePath) throws AWTException{
 		StringSelection ss = new StringSelection(filePath);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
@@ -355,8 +336,6 @@ public class Keywords extends GetBrowserInstance
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 	}
-
-
 
 
 	public void clickByAction(WebDriver driver , By locator) {

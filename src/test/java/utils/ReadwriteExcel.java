@@ -5,13 +5,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadwriteExcel {
@@ -65,8 +63,9 @@ public class ReadwriteExcel {
 		try 
 		{
 			outputStream = new FileOutputStream(path);
-			workbook.write(outputStream);			
+			workbook.write(outputStream);	
 			outputStream.close();
+			System.out.println(newSheet);
 		} 
 		catch (IOException e) 
 		{
@@ -234,13 +233,6 @@ public class ReadwriteExcel {
 	}
 	
 	//======>
-	
-
-	
-	
-	
-	
-	
 	
 
 	
