@@ -1,6 +1,5 @@
 package utils;
 import java.util.Properties;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -16,7 +15,6 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
-import org.testng.annotations.Test;
 
 public class SendEmail {
 	Properties pro = new Properties();

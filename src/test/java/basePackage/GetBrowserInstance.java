@@ -1,5 +1,5 @@
 /*
- * @Author-Gaurav Kumar
+ * @Author-Gaurav Kumar and Aakash Gupta
  * Automation frame work Base Browser handling class.
  * Configured for Chrome, Firefox, IE, and PhantomJS.
  *Remote webDriver is also present.
@@ -9,21 +9,17 @@
 
 package basePackage;
 import java.io.File;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.Test;
+import utils.Constants;
+
 
 public class GetBrowserInstance {
-	
-	public WebDriver openLocalBowser(String browserName){
+	String browserName = Constants.browser;
+	public WebDriver openLocalBowser(){
 		
 		if(browserName.equalsIgnoreCase("chrome")){
 			return chromeInit();
@@ -44,7 +40,6 @@ public class GetBrowserInstance {
 	}
 
 	private WebDriver phantomInit() {
-		
 		
 		File src = new File(System.getProperty("user.dir")+"\\drivers\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe");
 		System.setProperty("phantomjs.binary.path", src.getAbsolutePath());
@@ -78,7 +73,8 @@ public class GetBrowserInstance {
 		return driver;
 		
 	}
-	@Test
+	
+/*	@Test
 	public void gridBrowser() throws IOException, InterruptedException{	
 		
 		
@@ -106,6 +102,6 @@ public class GetBrowserInstance {
  		
 	
  		
-	}
+	}*/
 	
 }
