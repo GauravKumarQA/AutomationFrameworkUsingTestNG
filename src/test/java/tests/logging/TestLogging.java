@@ -1,6 +1,5 @@
-package org.automation.all.tests.logging;
+package tests.logging;
 
-import org.automation.all.pageObjects.TestLoggingPO;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -10,6 +9,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import basePackage.GetBrowserInstance;
+import pageObjects.TestLoggingPO;
 import utils.ExtentLoging;
 import utils.ExtentReport;
 
