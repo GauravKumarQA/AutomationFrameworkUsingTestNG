@@ -17,6 +17,7 @@ public class ClassAnnotations {
 	@Test
 	public void testClass(){
 		System.out.println("Test to before and after test");
+		System.out.println(System.getProperty("os.version"));
 	}
 	
 	
