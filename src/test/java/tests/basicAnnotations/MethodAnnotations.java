@@ -1,4 +1,4 @@
-package org.automation.all.tests.basicAnnotations;
+package tests.basicAnnotations;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
