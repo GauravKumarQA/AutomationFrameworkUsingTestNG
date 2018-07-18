@@ -15,7 +15,7 @@ import utils.ExtentReport;
 
 
 @Listeners(utils.Listen.class)
-public class TestLogging {
+public class TestLogging{
 
 //initialization
   WebDriver driver;

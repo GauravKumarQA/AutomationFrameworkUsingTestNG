@@ -15,6 +15,7 @@ public class TestLoggingPO {
   public void getUrl(WebDriver driver)
   {
       key.getUrl(driver,Constants.url);
+      
   }
   
   

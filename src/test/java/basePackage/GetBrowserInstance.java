@@ -19,7 +19,7 @@ import utils.Constants;
 
 public class GetBrowserInstance {
 	String browserName = Constants.browser;
-	public WebDriver openLocalBowser(){
+    public WebDriver openLocalBowser(){
 		
 		if(browserName.equalsIgnoreCase("chrome")){
 			return chromeInit();
