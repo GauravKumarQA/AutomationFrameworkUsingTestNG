@@ -1,4 +1,4 @@
-package org.automation.all.tests.inheritTestNg;
+package tests.inheritTestNg;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
