@@ -13,7 +13,10 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
+		<env>1234</env>
+		<browserName>chrome</browserName>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
 	</properties>
 
 	<!-- Build dependency -->
@@ -138,7 +141,8 @@
 				<version>2.19.1</version>
 				<configuration>
 					<systemPropertyVariables>
-						<!-- <environment>${browserName}</environment> -->
+						<environment>${env}</environment>
+						<browser>${browserName}</browser>
 					</systemPropertyVariables>
 					<suiteXmlFiles>
 						<!-- TestNG suite XML files -->
