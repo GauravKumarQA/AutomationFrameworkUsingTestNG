@@ -6,6 +6,6 @@ node{
     stage('Maven test'){
             
         def mavenHome = tool name: 'M2_HOME', type: 'maven'
-        bat "${mavenHome}/bin/mvn clean test -Denv=${param.Env}  -DbrowserName=chrome"
+        bat "${mavenHome}/bin/mvn clean test -Denv=${params.Env}  -DbrowserName=chrome"
     }
 }
