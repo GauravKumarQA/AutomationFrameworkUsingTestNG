@@ -4,8 +4,17 @@ node{
       git 'https://github.com/GauravKumarQA/AutomationFrameworkUsingTestNG'
     }
     stage('Maven test'){
-            
         def mavenHome = tool name: 'M2_HOME', type: 'maven'
-        bat "${mavenHome}/bin/mvn clean test -Denv=${params.Env}  -DbrowserName=chrome"
+     
+     
+     stage ('Speak') {
+            when {
+                // Only say hello if a "greeting" is requested
+                expression { params.Env == 'hello1' }
+            }
+            steps {
+                bat "${mavenHome}/bin/mvn clean test -Denv=${params.Env}  -DbrowserName=chrome"
+                bat "${mavenHome}/bin/mvn clean test -Denv=${params.Env}  -DbrowserName=chrome"
+            }
     }
 }
