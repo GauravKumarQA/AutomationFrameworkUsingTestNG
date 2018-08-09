@@ -4,19 +4,24 @@ pipeline {
         choice(
             // choices are a string of newline separated values
             // https://issues.jenkins-ci.org/browse/JENKINS-41180
-            choices: 'greeting\nsilence',
+            choices: 'hello1\hello2',
             description: '',
-            name: 'REQUESTED_ACTION')
+            name: 'Env')
     }
 
     stages {
-        stage ('Speak') {
+        
+        stage('Pull from git hub'){
+      git 'https://github.com/GauravKumarQA/AutomationFrameworkUsingTestNG'
+    }
+        stage ('Test') {
             when {
                 // Only say hello if a "greeting" is requested
-                expression { params.REQUESTED_ACTION == 'greeting' }
+                expression { params.Env == 'hello1' }
             }
             steps {
-                echo "Hello, bitwiseman!"
+                 def mavenHome = tool name: 'M2_HOME', type: 'maven'
+               bat "${mavenHome}/bin/mvn clean test -Denv=${params.Env}  -DbrowserName=chrome"
             }
         }
     }
