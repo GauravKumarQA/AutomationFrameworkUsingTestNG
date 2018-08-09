@@ -9,19 +9,25 @@ pipeline {
             name: 'Env')
     }
 
-    stages {
-         def mavenHome = tool name: 'M2_HOME', type: 'maven'
-        stage ('Pull from git hub'){
-      git 'https://github.com/GauravKumarQA/AutomationFrameworkUsingTestNG'
-    }
-        stage ('Test') {
-            when {
-                // Only say hello if a "greeting" is requested
-                expression { params.Env == 'hello1' }
-            }
+    if(${params.Env} == 'hello1'){
+        stages {
+            stage ('hello'){
             steps {
-               bat "${mavenHome}/bin/mvn clean test -Denv=${params.Env}  -DbrowserName=chrome"
-            }
-        }
+                echo 'Hello, Maven'
+                  }
+                           }
+                }
+                                 }
+    else{
+     stages {
+            stage ('hello2'){
+            steps {
+                echo 'Hello, Maven'
+                  }
+                           }
+         stage ('hell01'){
+          echo 'Hello, Maven2'
+         }
+                }
     }
 }
