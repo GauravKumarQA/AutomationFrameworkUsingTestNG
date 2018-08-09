@@ -5,9 +5,7 @@ node{
     }
     stage('Maven test'){
         def mavenHome = tool name: 'M2_HOME', type: 'maven'
-     
-     
-     stage ('Speak') {
+    
             when {
                 // Only say hello if a "greeting" is requested
                 expression { params.Env == 'hello1' }
