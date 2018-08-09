@@ -10,8 +10,8 @@ pipeline {
     }
 
     stages {
-        
-        stage('Pull from git hub'){
+         def mavenHome = tool name: 'M2_HOME', type: 'maven'
+        stage ('Pull from git hub'){
       git 'https://github.com/GauravKumarQA/AutomationFrameworkUsingTestNG'
     }
         stage ('Test') {
@@ -20,7 +20,6 @@ pipeline {
                 expression { params.Env == 'hello1' }
             }
             steps {
-                 def mavenHome = tool name: 'M2_HOME', type: 'maven'
                bat "${mavenHome}/bin/mvn clean test -Denv=${params.Env}  -DbrowserName=chrome"
             }
         }
