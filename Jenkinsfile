@@ -1,4 +1,4 @@
- properties([parameters([choice(choices: 'test', description: '', name: 'Env')]), pipelineTriggers([])])
+ properties([parameters([choice(choices: 'hello1\nhello2', description: '', name: 'Env')]), pipelineTriggers([])])
 node{
     stage('Pull from git hub'){
       git 'https://github.com/GauravKumarQA/AutomationFrameworkUsingTestNG'
