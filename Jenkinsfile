@@ -1,20 +1,23 @@
- properties([parameters([choice(choices: 'hello1\nhello2', description: '', name: 'Env')]), pipelineTriggers([])])
-node{
-    stage('Pull from git hub'){
-      git 'https://github.com/GauravKumarQA/AutomationFrameworkUsingTestNG'
+pipeline {
+    agent any
+    parameters {
+        choice(
+            // choices are a string of newline separated values
+            // https://issues.jenkins-ci.org/browse/JENKINS-41180
+            choices: 'greeting\nsilence',
+            description: '',
+            name: 'REQUESTED_ACTION')
     }
- stages('testing'){
-    stage('Maven test'){
-    
+
+    stages {
+        stage ('Speak') {
             when {
                 // Only say hello if a "greeting" is requested
-                expression { params.Env == 'hello1' }
+                expression { params.REQUESTED_ACTION == 'greeting' }
             }
             steps {
-              def mavenHome = tool name: 'M2_HOME', type: 'maven'
-                bat "${mavenHome}/bin/mvn clean test -Denv=${params.Env}  -DbrowserName=chrome"
-                bat "${mavenHome}/bin/mvn clean test -Denv=${params.Env}  -DbrowserName=chrome"
+                echo "Hello, bitwiseman!"
             }
+        }
     }
-}
 }
