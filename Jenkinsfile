@@ -4,6 +4,6 @@ node{
     }
     stage('Maven test'){
         def mavenHome = tool name: 'M2_HOME', type: 'maven'
-        sh "${mavenHome}/mvn test"
+        sh "${mavenHome}/bin clean test"
     }
 }
