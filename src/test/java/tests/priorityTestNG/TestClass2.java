@@ -1,4 +1,4 @@
-package org.automation.all.tests.inheritTestNg;
+package tests.priorityTestNG;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import basePackage.GetBrowserInstance;
 
-public class B {
+public class TestClass2 {
   WebDriver driver;
   GetBrowserInstance gbi = new GetBrowserInstance();
   
