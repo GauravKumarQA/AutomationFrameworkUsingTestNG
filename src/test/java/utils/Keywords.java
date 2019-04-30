@@ -18,6 +18,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.function.Function;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -478,5 +480,18 @@ public class Keywords {
 	  LocalDate localDate = LocalDate.now();
 	  return dtf.format(localDate.minusDays(futureDays));
 	 }
+	 
+	 	//This method will wait until all AJAX call complete.It requires jquery enabled
+		public static void wait_Until_Requests_to_Complete(WebDriver driver) {
+			System.out.println("WAITING FOR AJAX CALLS TO COMPLETE.");
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(new Function<WebDriver,Boolean>() {
+				public Boolean apply(WebDriver driver) {
+					JavascriptExecutor je = (JavascriptExecutor) driver;
+					return Boolean.parseBoolean(String.valueOf(je.executeScript(" return jQuery.active === 0")));
+				}
+			});	
+			System.out.println("ALL CALLS COMPLETED");
+		}
 
 }
